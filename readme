@@ -1,1 +1,6 @@
-caiwei
+add demo of activeMQ, annotation, countDownLatch,cyclicBarrier,semaphore,Future, threadPool,eventListener, 
+file&ftpUpload,leetcode, netty, socket,arithmeticSpeed,threadYield.
+计算机运算速度超级快，从1000万长度的数组取值与固定值equal,耗时大概16ms,说明多线程主要用于在多个io连接中，通过并发，
+来减少各个等待之间时间互相叠加。多线程会并不会加快运算速度，由于线程开启的开销，如果忽略io等待的话，如果纯计算，
+那么多线程反而更慢。所有多线程主要用来解决当io等待时，app并不会阻塞，浪费计算能力，而是在另外的线程中继续计算，
+提高程序的并发能力。
