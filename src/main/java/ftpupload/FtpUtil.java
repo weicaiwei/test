@@ -49,15 +49,15 @@ public class FtpUtil {
      *            ftp服务保存地址
      * @param fileName
      *            上传到ftp的文件名
-     * @param originfilename
+     * @param originFileName
      *            待上传文件的名称（绝对地址） *
      * @return
      */
-    public boolean uploadFile(String pathname, String fileName, String originfilename) {
+    public boolean uploadFile(String pathname, String fileName, String originFileName) {
         InputStream inputStream = null;
         try {
             System.out.println("开始上传文件");
-            inputStream = new FileInputStream(new File(originfilename));
+            inputStream = new FileInputStream(new File(originFileName));
             initFtpClient();
             ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
             CreateDirecroty(pathname);

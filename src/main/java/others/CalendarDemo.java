@@ -13,7 +13,7 @@ public class CalendarDemo {
         Calendar calendar1 = Calendar.getInstance();
         calendar1.add(Calendar.HOUR_OF_DAY, -3);
 
-        System.out.println((new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")).format(calendar1.getTime()));
+        System.out.println((new SimpleDateFormat("yyyy-MM-dd 00:00:00")).format(calendar1.getTime()));
         Calendar calendar2 = Calendar.getInstance();
         calendar2.set(Calendar.DAY_OF_MONTH, 31);
         System.out.println((new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")).format(calendar2.getTime()));
