@@ -46,7 +46,7 @@ public class ThreadPoolDemo {
         }
         long startTime = System.currentTimeMillis();
         for(int i = 0; i < 3000; i++){
-            pool.execute(()->{
+            pool.submit(()->{
                 try {
                     Print.print("线程："+Thread.currentThread().getName()+"执行中");
                 } catch (Exception e) {

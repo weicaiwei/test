@@ -20,6 +20,7 @@ public class No1_TwoSum {
         for(int i = 0; i < arr.length; i++){
             for (int j = i+1; j < arr.length; j++) {
                 if((arr[i] + arr[j]) == 7){
+                    int[]a = new int[]{1, 2};
                     System.out.println("i: "+i+" j:"+ j);
                 }
             }

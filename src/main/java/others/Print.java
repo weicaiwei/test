@@ -19,4 +19,15 @@ public class Print {
     public static void println(String msg) {
         System.out.println(msg);
     }
+
+
+    public static void main(String[] args) {
+
+        System.out.println("结果是："+(log(5,10) -(log(2,10)/log(5,4)) ));
+    }
+
+    static  double log(double value, double base) {
+
+        return Math.log(value) / Math.log(base);
+    }
 }

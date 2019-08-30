@@ -54,7 +54,5 @@ public class FileReadWrite {
         }
         file.close();
 
-
-
     }
 }

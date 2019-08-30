@@ -26,7 +26,6 @@ public class Main {
         SecretKey key = new SecretKeySpec(encodeSecretKey, 0,encodeSecretKey.length,"AES");
 
 
-
         //然后根据这个secret创建jwt
         SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.HS256;
         Date now = new Date();
@@ -49,5 +48,7 @@ public class Main {
         String name = (String) claims.get("name");
         String role = (String) claims.get("role");
         System.out.println("name:" + name + ";role:" + role);
+
+         
     }
 }
