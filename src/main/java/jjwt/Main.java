@@ -36,6 +36,7 @@ public class Main {
                 .claim("name", "caiwei")
                 .claim("role", "student")
                 .setIssuer("caiwei")
+                .setExpiration(new Date())
                 .signWith(signatureAlgorithm, key);
         String jwt = builder.compact();
         System.out.println("jwt:" + jwt);
