@@ -21,7 +21,13 @@ public class XMLService {
             Field[] fields = tClass.getDeclaredFields();
             for (Field field : fields) {
                 field.setAccessible(true);
-                String elementValue = element.elementText(field.getName());
+                String elementValue;
+                if (field.isAnnotationPresent(XMLElement.class)) {
+                    XMLElement xmlElement = field.getAnnotation(XMLElement.class);
+                    elementValue = element.elementText(xmlElement.value());
+                }else {
+                    elementValue = element.elementText(field.getName());
+                }
                 if (null != elementValue) {
                     field.set(tObject, elementValue);
                 } else {
