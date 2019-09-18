@@ -15,13 +15,16 @@ public class SecurityTest {
 
     public static void main(String[] args) throws NoSuchAlgorithmException {
 
-        String data = "caiwei";
+        double a = Double.valueOf("3.79");
+        System.out.println(a);
+
+        String data = "caiweiweiwei";
 
 
 
 
         System.out.println(encrypt(data));
-        System.out.println(encrypt("FVj59sgatooNIjQS5zzhY5iJ2D78V4I+naIwgIpKzH8="));
+
         System.out.println(encrypt("精彩的母猪餐后护理"));
 
 

@@ -2,6 +2,8 @@ package dom4j;
 
 import lombok.Data;
 
+import java.util.List;
+
 /**
  * @ClassName: Part
  * @Description: TODO
@@ -19,4 +21,6 @@ public class Part {
     private String year;
     @XMLElement("price_un")
     private String price;
+
+    private List<String> testList;
 }

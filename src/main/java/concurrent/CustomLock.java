@@ -24,6 +24,7 @@ public class CustomLock {
                     lock.lock();
                     Thread.sleep(3000);
                     System.out.println("线程名字是：" + Thread.currentThread().getName());
+                    lock.unlock();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }finally {
