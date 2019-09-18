@@ -22,9 +22,9 @@ public class SimpleBlockingQueue<T> {
     private Condition notFull;
 
 
-    int takeIndex;
+    private int takeIndex;
 
-    int putIndex;
+    private int putIndex;
 
     public SimpleBlockingQueue(int capacity) {
         queue = new Object[capacity];
