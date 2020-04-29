@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<video preload src = "http://192.168.129.128:80/api/TheShawshankRedemption.mp4" controls>
+
+</video>
+<script>
+    var url = document.querySelector('video').src;
+    document.querySelector('video').src = url + '?ts='+new Date().getTime();
+</script>
+</body>
+</html>

@@ -24,7 +24,7 @@ public class PlainOioServer {
         try {
             for (; ; ) {
                 final Socket clientSocket = socket.accept();
-                if (null != clientSocket) {
+                if (null != clientSocket) {//这一步是多余的，因为socket.accept是阻塞的，如果没有连接过来，那么socket.accept会一直阻塞着，代码压根就不会向下运行
                     log.info("服务端收到一个连接请求");
                     new Thread(() -> {
                         try {

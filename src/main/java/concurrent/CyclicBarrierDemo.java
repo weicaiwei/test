@@ -20,16 +20,40 @@ public class CyclicBarrierDemo {
     public static void main(String[] args) throws InterruptedException {
 
         awaitNoOtherTask();
-        awaitDoOtherTask();
+        /*awaitDoOtherTask();*/
 
 
     }
-
+    /**
+     * @Title: awaitNoOtherTask
+     * @Description: TODO
+     * @params: []
+     * @return: void
+     * @throws:
+     * @author: caiwei
+     * @date: 2019/12/5 20:04
+     */
     static void awaitNoOtherTask() {
 
         CyclicBarrier barrier = new CyclicBarrier(3);
         ExecutorService pool = Executors.newFixedThreadPool(6);
 
+        for (int i = 0; i < 6; i++) {
+
+            pool.execute(() -> {
+                try {
+                    System.out.println("线程：" + Thread.currentThread().getName() + "正在写入数据");
+                    Thread.sleep(new Random().nextInt(3) * 1000);
+                    System.out.println("线程：" + Thread.currentThread().getName() + "写入数据完毕，等待其他线程写入数据");
+                    barrier.await();
+                } catch (InterruptedException | BrokenBarrierException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("其他线程数据写入完毕，线程：" + Thread.currentThread().getName() + "继续执行任务");
+
+            });
+        }
+/*        //syclicBarrier是可重用的
         for(int i = 0; i < barrier.getParties(); i++){
             pool.execute(()->{
                 try {
@@ -45,25 +69,8 @@ public class CyclicBarrierDemo {
                 System.out.println("其他线程数据写入完毕，线程："+Thread.currentThread().getName()+"继续执行任务");
 
             });
-        }
-        //syclicBarrier是可重用的
-        for(int i = 0; i < barrier.getParties(); i++){
-            pool.execute(()->{
-                try {
-                    System.out.println("线程："+Thread.currentThread().getName()+"正在写入数据");
-                    Thread.sleep(new Random().nextInt(3)*1000);
-                    System.out.println("线程："+Thread.currentThread().getName()+"写入数据完毕，等待其他线程写入数据");
-                    barrier.await();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                } catch (BrokenBarrierException e) {
-                    e.printStackTrace();
-                }
-                System.out.println("其他线程数据写入完毕，线程："+Thread.currentThread().getName()+"继续执行任务");
 
-            });
-
-        }
+        }*/
     }
 
     static void awaitDoOtherTask() {

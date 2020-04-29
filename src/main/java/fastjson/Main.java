@@ -3,9 +3,6 @@ package fastjson;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * @ClassName: Main
  * @Description: TODO
@@ -15,18 +12,17 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
+
+        System.out.println(System.getProperty("jvm.name"));
+
+        Dog[] dogs = new Dog[2];
         String peopleJsonString =
                 "{'name':'wangpengda','age':'18','dogs':[{'name':'fugui'},{'name':'guihua'},{'name':'changhong'}]}";
 
 
-        List<Dog> dogs = new ArrayList<>();
-        Dog dog = new Dog();
-        dog.setName("fugui");
-        dogs.add(dog);
         People people = new People();
         people.setName("wangpengda");
         people.setAge("18");
-        people.setDogs(dogs);
 
 
         People people1 = JSON.parseObject(peopleJsonString, People.class);

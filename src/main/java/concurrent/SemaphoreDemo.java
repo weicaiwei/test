@@ -23,7 +23,7 @@ public class SemaphoreDemo {
                 try {
                     semaphore.acquire();
                     System.out.println("工人"+Thread.currentThread().getName()+"占用一个机器在生产...");
-                    Thread.sleep(2000);
+                    Thread.sleep(20000);
                     System.out.println("工人"+Thread.currentThread().getName()+"释放出机器");
                     semaphore.release();
                 } catch (InterruptedException e) {

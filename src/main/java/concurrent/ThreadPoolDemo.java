@@ -24,7 +24,7 @@ public class ThreadPoolDemo {
 
 
     }
-    static void executeThreadPool(ThreadPoolType type) throws InterruptedException {
+    private static void executeThreadPool(ThreadPoolType type) throws InterruptedException {
 
         ExecutorService pool = null;
         switch (type) {

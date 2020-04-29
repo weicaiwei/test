@@ -1,5 +1,7 @@
 package file;
 
+import org.apache.commons.io.FilenameUtils;
+
 import java.io.File;
 
 
@@ -12,12 +14,18 @@ import java.io.File;
 public class Main {
 
     public static void main(String[] args){
+
         String url = "D:\\temp\\";
         File folder = new File(url);
         String[] fileNames = folder.list();
         for(String s : fileNames){
             System.out.println(s);
         }
+
+        String filename = "caiwei.mp4";
+
+        System.out.println(FilenameUtils.getExtension(filename));
+        org.apache.log4j.Logger.getLogger("smslib");
         
     }
 }

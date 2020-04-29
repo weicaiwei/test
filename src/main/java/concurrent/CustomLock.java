@@ -17,8 +17,8 @@ public class CustomLock {
 
         Lock lock = new ReentrantLock();
         System.out.println(System.getProperty("java.vm.name"));
-        ExecutorService threadPool = Executors.newFixedThreadPool(5);
-        for(int i = 0; i < 5; i++){
+        ExecutorService threadPool = Executors.newFixedThreadPool(2);
+        for(int i = 0; i < 2; i++){
             threadPool.submit(()->{
                 try {
                     lock.lock();

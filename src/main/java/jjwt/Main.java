@@ -43,6 +43,7 @@ public class Main {
 
 
         Claims claims = Jwts.parser()
+                //可以为Key类型，也可以为String类型
                 .setSigningKey(key)
                 .parseClaimsJws(jwt)
                 .getBody();

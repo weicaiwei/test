@@ -1,9 +1,10 @@
 package security;
 
-import java.nio.charset.StandardCharsets;
+
+import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.Base64;
+import java.util.Collections;
 
 /**
  * @ClassName: SecurityTest
@@ -15,30 +16,28 @@ public class SecurityTest {
 
     public static void main(String[] args) throws NoSuchAlgorithmException {
 
-        double a = Double.valueOf("3.79");
-        System.out.println(a);
 
         String data = "caiweiweiwei";
 
 
 
 
-        System.out.println(encrypt(data));
+        encrypt(data);
 
-        System.out.println(encrypt("精彩的母猪餐后护理"));
 
 
     }
 
-    public static String encrypt(String data) {
+    public static void encrypt(String data) {
 
         try {
-            MessageDigest digest = MessageDigest.getInstance("SHA-256");
-            digest.update(data.getBytes(StandardCharsets.UTF_8));
-            return Base64.getEncoder().encodeToString(digest.digest());
+            MessageDigest digest = MessageDigest.getInstance("MD5");
+            digest.update(data.getBytes());
+            System.out.println(new BigInteger(digest.digest()).toString(16));
         } catch (NoSuchAlgorithmException e) {
+
             e.printStackTrace();
         }
-        return null;
+
    }
 }
